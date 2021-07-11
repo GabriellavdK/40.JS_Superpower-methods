@@ -150,7 +150,7 @@ const superheroes = [
 
 let heaviestWeigth = array => {
 	let largest = 0;
-	array.forEach(item => {
+	array.filter(item => {
 		const weight = parseFloat(item.weight);
 		while (weight > largest && weight != "unknown") {	
 			largest = weight;
