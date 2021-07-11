@@ -116,7 +116,7 @@ const superheroes = [
 
 // Maak een array met de namen van de superhelden die 200 pounds wegen
 // const namesOfSuperheroesThatWeigh200Pounds = element => {
-// 	console.log("De superhelden die 200 kilo wegen zijn: ", element.filter(item => item.weight === "200").map(item => item.name));
+// 	console.log("De superhelden die 200 kilo wegen zijn: ", element.filter(item => item.weight == 200).map(item => item.name));
 // 	return;
 // }
 // namesOfSuperheroesThatWeigh200Pounds(superheroes);
@@ -137,12 +137,10 @@ const superheroes = [
 // const weightDcSuperheroes = element => element.filter(item => item.publisher === "DC Comics").reduce((value, item) => parseFloat(value) + parseFloat(item.weight), 0);
 // console.log("Het totale gewicht van de DC superheroes is samen: ", weightDcSuperheroes(superheroes));
 
-
 // Doe hetzelfde met alle superhelden van Marvel Comics
-// const weightMarvelSuperheroes = element => element.filter(item => item.publisher === "Marvel Comics" && item.weight != "unknown").reduce((value, item) => parseFloat(value) + parseFloat(item.weight), 0);
+// const weightMarvelSuperheroes = element => element.filter(item => item.publisher === "Marvel Comics" && item.weight != "unknown").reduce((value, item) => parseInt(value) + parseInt(item.weight), 0);
 // console.log("Het totale gewicht van de Marvel superheroes is samen: ", weightMarvelSuperheroes(superheroes));
 // resultaat moet zijn: 2637
-
 
 // Bonus: zoek de zwaarste superheld!
 // const HeaviestWeigth = element => element.filter(item => item[item.weight - 1]);
@@ -157,9 +155,8 @@ let heaviestWeigth = array => {
 		}
 	})
 	const result = array.filter(item => item.weight == largest);
-	const nameHeaviest = result.map(item => item.name);
-	console.log("De zwaarste superheld is de:", nameHeaviest.join(), "en het gewicht van die held is:");
-	return largest;
+	console.log("De zwaarste superheld is:");
+	return result;
 };
 
 console.log(heaviestWeigth(superheroes));
